@@ -1,30 +1,133 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi"
+		 xmlns:iis="http://schemas.microsoft.com/wix/IIsExtension">
 	<Product Id="*" Name="Website.Setup" Language="1033" Version="1.0.0.0" Manufacturer="Ivedix" UpgradeCode="b3429a54-ee4c-48a0-9bb0-d6cc892bc186">
 		<Package InstallerVersion="200" Compressed="yes" InstallScope="perMachine" />
 
 		<MajorUpgrade DowngradeErrorMessage="A newer version of [ProductName] is already installed." />
-		<MediaTemplate />
+
+		<!--Check to see if IIS is installed. It it’s not, error out.-->
+		<Property Id="IIS_MAJOR_VERSION">
+			<RegistrySearch Id="CheckIISVersion"
+											 Root="HKLM"
+											Key="SOFTWARE\Microsoft\InetStp"
+											Name="MajorVersion"
+										 Type="raw" />
+		</Property>
+
+		<Condition Message="IIS must be installed">
+			Installed OR IIS_MAJOR_VERSION
+		</Condition>
+
+		 <!--Go find the IIS root directory from the registry. On most machines 
+				 that defaults to C:inetpubwwwroot. This will be the directory we 
+				 install into.--> 
+		<Property Id="IISROOT">
+			<RegistrySearch Id="IISROOT"
+											Type="directory"
+											Root="HKLM"
+											Key="SOFTWARE\Microsoft\InetStp"
+											Name="PathWWWRoot" />
+		</Property>
+
+		<Condition Message="IIS does not appear to be installed correctly, the   root directory is not set.">
+			Installed OR IISROOT
+		</Condition>
+		<!--<MediaTemplate />-->
+		<Media Id="1" Cabinet="Website.cab" EmbedCab="yes" />
 
 		<Feature Id="ProductFeature" Title="Website.Setup" Level="1">
 			<ComponentGroupRef Id="ProductComponents" />
+			<!--<ComponentGroupRef Id="BinComponents" />-->
+			<ComponentGroupRef Id="CSSComponents" />
+			<ComponentGroupRef Id="JsComponents" />
+			<ComponentGroupRef Id="FontsComponents" />
+			<ComponentRef Id="WebVirtualDirComponent" />
 		</Feature>
 	</Product>
 
-	<Fragment>
+	<!--<Fragment>
 		<Directory Id="TARGETDIR" Name="SourceDir">
 			<Directory Id="ProgramFilesFolder">
 				<Directory Id="INSTALLFOLDER" Name="Website.Setup" />
 			</Directory>
 		</Directory>
+	</Fragment>-->
+	<Fragment>
+		<!-- Will default to C:\ if that is the main disk-->
+		<Directory Id="TARGETDIR" Name="SourceDir">
+			<!-- Will reference to C:\inetpub-->
+			<Directory Id="INETPUB" Name="Inetpub">
+				<!-- Will reference to c:\Inetpub\Demowebsite-->
+				<Directory Id="WWWROOT" Name="wwwroot">					
+					<Directory Id="INSTALLFOLDER" Name="cmsadmin">           
+						<!--<Directory Id="BIN" Name="bin"/>-->
+						<Directory Id="CSS" Name="css"/>
+						<Directory Id="JS" Name="js"/>
+						<Directory Id="FONTS" Name="fonts"/>
+
+						<Component Id="WebVirtualDirComponent" Guid="D814F88F-6E0C-4365-A411-2F9807522C3D">						 
+								<!--<iis:WebVirtualDir Id="VDir" Alias="cmsadmin"	Directory="INSTALLFOLDER"  WebSite="DefaultWebSite">
+									--><!--<iis:WebApplication Id="TestWebApplication"	Name="cmsadmin" />--><!--
+								</iis:WebVirtualDir>-->
+							<iis:WebSite Id="cmsadmin" Description="cmsadmin"		Directory="INSTALLFOLDER">
+								<iis:WebAddress Id="AllUnassigned" Port="8081" />
+							</iis:WebSite>							 
+								<CreateFolder/>
+							</Component>
+					</Directory>
+				
+				</Directory>
+			</Directory>
+		</Directory> 
+
 	</Fragment>
 
 	<Fragment>
+	 
 		<ComponentGroup Id="ProductComponents" Directory="INSTALLFOLDER">
 			<!-- TODO: Remove the comments around this Component element and the ComponentRef below in order to add resources to this installer. -->
-			<!-- <Component Id="ProductComponent"> -->
-				<!-- TODO: Insert files, registry keys, and other resources here. -->
-			<!-- </Component> -->
+			<Component Id="ProductComponent" Guid="{6F44232F-1C0B-4278-AB2B-BFD34FAE863C}">
+				<!--<File Id="favicon.ico" Source="..\DemoWebsite\favicon.ico" />
+				<File Id="Global.asax" Source="..\DemoWebsite\Global.asax" />
+				<File Id="Web.config" Source="..\DemoWebsite\Web.config" />-->
+				<File Id="app.js" Source="..\cmsadmin\app.js" />
+				<File Id="edit.html" Source="..\cmsadmin\edit.html" />       
+				<File Id="index.html" Source="..\cmsadmin\index.html" />
+				<File Id="login.html" Source="..\cmsadmin\login.html" />
+				<File Id="pages.html" Source="..\cmsadmin\pages.html" />
+				<File Id="posts.html" Source="..\cmsadmin\posts.html" />
+				<File Id="users.html" Source="..\cmsadmin\users.html" />			
+			</Component>
 		</ComponentGroup>
+		<!--ComponentGroup Id="BinComponents" Directory="BIN">
+			<Component Id="BinComponent" Guid="{A41811D7-49DD-462B-98D2-56DF1202008E}">
+				<File Id="Antlr3.Runtime.dll" Source="..\DemoWebsite\bin\Antlr3.Runtime.dll" />
+				--><!-- And so on and on --><!--
+			</Component>
+		</ComponentGroup>-->
+		<ComponentGroup Id="CSSComponents" Directory="CSS">
+		<Component Id="CSSComponent" Guid="{A41811D7-49DD-462B-98D2-56DF1202008E}">
+				<File Id="bootstrap.min.css" Source="..\cmsadmin\css\bootstrap.min.css" />
+				<File Id="style.css" Source="..\cmsadmin\css\style.css" />
+			</Component>
+		</ComponentGroup>
+		<ComponentGroup Id="JsComponents" Directory="JS">
+			<Component Id="JsComponent" Guid="{0C44F81D-1060-427D-AF45-79070EEC94B9}">
+				<File Id="bootstrap.min.js" Source="..\cmsadmin\js\bootstrap.min.js" />
+				
+		
+			</Component>
+		</ComponentGroup>
+		<ComponentGroup Id="FontsComponents" Directory="FONTS">
+			<Component Id="FontsComponent" Guid="{06347F0E-03F3-44C2-8640-DB2C703D1325}">
+				<File Id="glyphiconshalflingsregular.eot" Source="..\cmsadmin\fonts\glyphicons-halflings-regular.eot" />
+				<File Id="glyphiconshalflingsregular.svg" Source="..\cmsadmin\fonts\glyphicons-halflings-regular.svg" />
+				<File Id="glyphiconshalflingsregular.ttf" Source="..\cmsadmin\fonts\glyphicons-halflings-regular.ttf" />
+				<File Id="glyphiconshalflingsregular.woff" Source="..\cmsadmin\fonts\glyphicons-halflings-regular.woff" />
+				<File Id="glyphiconshalflingsregular.woff2" Source="..\cmsadmin\fonts\glyphicons-halflings-regular.woff2" />
+			</Component>
+		</ComponentGroup>
+	 
 	</Fragment>
 </Wix>
