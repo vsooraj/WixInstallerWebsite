@@ -3,7 +3,19 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27130.2010
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{930C7802-8A8C-48F9-8165-68863BCCD9DD}") = "Website.Setup", "Website.Setup\Website.Setup.wixproj", "{1B7DA727-227A-4FF7-A1AC-006B88492D2D}"
+EndProject
 Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1B7DA727-227A-4FF7-A1AC-006B88492D2D}.Debug|x86.ActiveCfg = Debug|x86
+		{1B7DA727-227A-4FF7-A1AC-006B88492D2D}.Debug|x86.Build.0 = Debug|x86
+		{1B7DA727-227A-4FF7-A1AC-006B88492D2D}.Release|x86.ActiveCfg = Release|x86
+		{1B7DA727-227A-4FF7-A1AC-006B88492D2D}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
