@@ -7,28 +7,6 @@ Project("{930C7802-8A8C-48F9-8165-68863BCCD9DD}") = "Website.Setup", "Website.Se
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DemoWebsite", "DemoWebsite\DemoWebsite.csproj", "{2AFEA86F-437C-4418-8F24-C384F54EC851}"
 EndProject
-Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "cmsadmin", "cmsadmin\", "{B6549733-7447-4854-9CD9-BA4AC9C70DF5}"
-	ProjectSection(WebsiteProperties) = preProject
-		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.6.2"
-		Debug.AspNetCompiler.VirtualPath = "/localhost_61161"
-		Debug.AspNetCompiler.PhysicalPath = "cmsadmin\"
-		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_61161\"
-		Debug.AspNetCompiler.Updateable = "true"
-		Debug.AspNetCompiler.ForceOverwrite = "true"
-		Debug.AspNetCompiler.FixedNames = "false"
-		Debug.AspNetCompiler.Debug = "True"
-		Release.AspNetCompiler.VirtualPath = "/localhost_61161"
-		Release.AspNetCompiler.PhysicalPath = "cmsadmin\"
-		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_61161\"
-		Release.AspNetCompiler.Updateable = "true"
-		Release.AspNetCompiler.ForceOverwrite = "true"
-		Release.AspNetCompiler.FixedNames = "false"
-		Release.AspNetCompiler.Debug = "False"
-		VWDPort = "61161"
-		SlnRelativePath = "cmsadmin\"
-		DefaultWebSiteLanguage = "Visual C#"
-	EndProjectSection
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,14 +29,6 @@ Global
 		{2AFEA86F-437C-4418-8F24-C384F54EC851}.Release|Any CPU.Build.0 = Release|Any CPU
 		{2AFEA86F-437C-4418-8F24-C384F54EC851}.Release|x86.ActiveCfg = Release|Any CPU
 		{2AFEA86F-437C-4418-8F24-C384F54EC851}.Release|x86.Build.0 = Release|Any CPU
-		{B6549733-7447-4854-9CD9-BA4AC9C70DF5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B6549733-7447-4854-9CD9-BA4AC9C70DF5}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B6549733-7447-4854-9CD9-BA4AC9C70DF5}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{B6549733-7447-4854-9CD9-BA4AC9C70DF5}.Debug|x86.Build.0 = Debug|Any CPU
-		{B6549733-7447-4854-9CD9-BA4AC9C70DF5}.Release|Any CPU.ActiveCfg = Debug|Any CPU
-		{B6549733-7447-4854-9CD9-BA4AC9C70DF5}.Release|Any CPU.Build.0 = Debug|Any CPU
-		{B6549733-7447-4854-9CD9-BA4AC9C70DF5}.Release|x86.ActiveCfg = Debug|Any CPU
-		{B6549733-7447-4854-9CD9-BA4AC9C70DF5}.Release|x86.Build.0 = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
