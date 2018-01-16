@@ -1,0 +1,329 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+    <Fragment>
+        <DirectoryRef Id="INSTALLFOLDER">
+            <Directory Id="dir7307A6085BD4ABD9B8955C093FD541F5" Name="bin" />
+            <Directory Id="dir530CC0BB7768701C9C7496ACE976A217" Name="Content" />
+            <Directory Id="dir52AB9D2EA73ECC1A796C76EF5D90B485" Name="fonts" />
+            <Directory Id="dir33A2F09B010813323099475AA1D7838F" Name="Scripts" />
+            <Directory Id="dir80336B8805F52EE6540E5C041C102B14" Name="Views" />
+        </DirectoryRef>
+    </Fragment>
+    <Fragment>
+        <ComponentGroup Id="MyWebWebComponents">
+            <Component Id="cmp687F2247A02D21E247595804EFE04A70" Directory="INSTALLFOLDER" Guid="{8C2DC4E6-69AB-4427-A078-36D6979CFE99}">
+                <File Id="fil26632584E925BB36171FC46C52C42BAC" KeyPath="yes" Source="$(var.publishDir)\ApplicationInsights.config" />
+            </Component>
+            <Component Id="cmp2A2B27F5AD386D451F6AD02173DDB353" Directory="INSTALLFOLDER" Guid="{75AFADCF-E9BC-4CE6-8BD7-519D0B37FD29}">
+                <File Id="fil510301A614A8F3D47B8A045FFEEF1D35" KeyPath="yes" Source="$(var.publishDir)\favicon.ico" />
+            </Component>
+            <Component Id="cmp6A4F9D28DF6F992FCE04768A605F3F6B" Directory="INSTALLFOLDER" Guid="{41584DD8-37CC-44D6-9FE3-CD822E7481E6}">
+                <File Id="fil290EB696DE8E76F029E58930686F7404" KeyPath="yes" Source="$(var.publishDir)\Global.asax" />
+            </Component>
+            <Component Id="cmpCDB7F4EFDEF1E65C3B12BEBAD7E4D7EA" Directory="INSTALLFOLDER" Guid="{E5CB6879-F967-42AF-BDD8-8DD27BC6D909}">
+                <File Id="fil8994620207C22CA15AF75ACDD6420C79" KeyPath="yes" Source="$(var.publishDir)\Web.config" />
+            </Component>
+            <Component Id="cmpD0C8AE0A0E1E97BF88AB5C2F28B027C1" Directory="INSTALLFOLDER" Guid="{505FA9F6-DAC1-4527-B8D1-33F2526EED5D}">
+                <File Id="fil27068D4ACE9D67404CD4CE19445DE4C4" KeyPath="yes" Source="$(var.publishDir)\Web.Debug.config" />
+            </Component>
+            <Component Id="cmpA0B9415D5BC7EAB6CA7F504326ED1B32" Directory="INSTALLFOLDER" Guid="{828A74D6-DDBE-477E-9C8E-3906F746C302}">
+                <File Id="fil941B8A712A3FD5B76A9AE3FABEA8F571" KeyPath="yes" Source="$(var.publishDir)\Web.Release.config" />
+            </Component>
+            <Component Id="cmp25D2BB97913BC97427F29C9D54112EB3" Directory="dir7307A6085BD4ABD9B8955C093FD541F5" Guid="{E18F1C04-6BC2-43BB-BA61-7EDC981490CF}">
+                <File Id="fil5A1D5AB7943B12753107AE4EDEB316CB" KeyPath="yes" Source="$(var.publishDir)\bin\Antlr3.Runtime.dll" />
+            </Component>
+            <Component Id="cmp7EA50196D6AFBA8B9DF10641AD4B65F9" Directory="dir7307A6085BD4ABD9B8955C093FD541F5" Guid="{5112CD34-59FD-41BE-85FE-C448A1A1120B}">
+                <File Id="fil8C746696A7324C8349B33CA7BEC72B39" KeyPath="yes" Source="$(var.publishDir)\bin\DemoWebsite.dll" />
+            </Component>
+            <Component Id="cmpB552B09D79E3E11626A5F0C8F69A10CC" Directory="dir7307A6085BD4ABD9B8955C093FD541F5" Guid="{D4B4FEF6-27D4-4D7F-BE34-66C8033A8582}">
+                <File Id="filAD37B3317527DC67A7A1583433C75657" KeyPath="yes" Source="$(var.publishDir)\bin\DemoWebsite.pdb" />
+            </Component>
+            <Component Id="cmpEA87C851D7C1B10C236668C114BE47C3" Directory="dir7307A6085BD4ABD9B8955C093FD541F5" Guid="{3BFC11B3-2AAB-4961-8692-AF2049D71763}">
+                <File Id="filB6B767860338B54C370539AE10E63597" KeyPath="yes" Source="$(var.publishDir)\bin\Microsoft.AI.Agent.Intercept.dll" />
+            </Component>
+            <Component Id="cmp09B7A4D1D15410734F1BB616497FAB61" Directory="dir7307A6085BD4ABD9B8955C093FD541F5" Guid="{C710B0E8-9A22-4EAE-A484-A2047FBF9334}">
+                <File Id="filA874633F349C98813500F35C1B7939FA" KeyPath="yes" Source="$(var.publishDir)\bin\Microsoft.AI.DependencyCollector.dll" />
+            </Component>
+            <Component Id="cmpF55D991454540F913E3C4062E7331192" Directory="dir7307A6085BD4ABD9B8955C093FD541F5" Guid="{D3EC85F9-6FE3-4878-9647-B95E20E51A6D}">
+                <Class Id="{213F780A-42B4-3C54-B0FC-1C0CAD4D7E0D}" Context="InprocServer32" Description="Microsoft.ApplicationInsights.Extensibility.PerfCounterCollector.PerformanceCollectorModule" ThreadingModel="both" ForeignServer="mscoree.dll">
+                    <ProgId Id="Microsoft.ApplicationInsights.Extensibility.PerfCounterCollector.PerformanceCollectorModule" Description="Microsoft.ApplicationInsights.Extensibility.PerfCounterCollector.PerformanceCollectorModule" />
+                </Class>
+                <Class Id="{6DF1A7C3-8496-38A6-ABE5-6B4F1BD7ACCF}" Context="InprocServer32" Description="Microsoft.ApplicationInsights.Extensibility.PerfCounterCollector.QuickPulse.QuickPulseTelemetryModule" ThreadingModel="both" ForeignServer="mscoree.dll">
+                    <ProgId Id="Microsoft.ApplicationInsights.Extensibility.PerfCounterCollector.QuickPulse.QuickPulseTelemetryModule" Description="Microsoft.ApplicationInsights.Extensibility.PerfCounterCollector.QuickPulse.QuickPulseTelemetryModule" />
+                </Class>
+                <Class Id="{7DDB63BA-01AC-31FC-A51A-292EF74BAF80}" Context="InprocServer32" Description="Microsoft.ApplicationInsights.Extensibility.PerfCounterCollector.PerformanceCounterCollectionRequest" ThreadingModel="both" ForeignServer="mscoree.dll">
+                    <ProgId Id="Microsoft.ApplicationInsights.Extensibility.PerfCounterCollector.PerformanceCounterCollectionRequest" Description="Microsoft.ApplicationInsights.Extensibility.PerfCounterCollector.PerformanceCounterCollectionRequest" />
+                </Class>
+                <File Id="filBE5909288783370C9477B46F4C70392D" KeyPath="yes" Source="$(var.publishDir)\bin\Microsoft.AI.PerfCounterCollector.dll" />
+                <RegistryValue Root="HKCR" Key="CLSID\{213F780A-42B4-3C54-B0FC-1C0CAD4D7E0D}\Implemented Categories\{62C8FE65-4EBB-45e7-B440-6E39B2CDBF29}" Value="" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{213F780A-42B4-3C54-B0FC-1C0CAD4D7E0D}\InprocServer32\2.2.0.0" Name="Class" Value="Microsoft.ApplicationInsights.Extensibility.PerfCounterCollector.PerformanceCollectorModule" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{213F780A-42B4-3C54-B0FC-1C0CAD4D7E0D}\InprocServer32\2.2.0.0" Name="Assembly" Value="Microsoft.AI.PerfCounterCollector, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{213F780A-42B4-3C54-B0FC-1C0CAD4D7E0D}\InprocServer32\2.2.0.0" Name="RuntimeVersion" Value="v4.0.30319" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{213F780A-42B4-3C54-B0FC-1C0CAD4D7E0D}\InprocServer32\2.2.0.0" Name="CodeBase" Value="file:///[#filBE5909288783370C9477B46F4C70392D]" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{213F780A-42B4-3C54-B0FC-1C0CAD4D7E0D}\InprocServer32" Name="Class" Value="Microsoft.ApplicationInsights.Extensibility.PerfCounterCollector.PerformanceCollectorModule" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{213F780A-42B4-3C54-B0FC-1C0CAD4D7E0D}\InprocServer32" Name="Assembly" Value="Microsoft.AI.PerfCounterCollector, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{213F780A-42B4-3C54-B0FC-1C0CAD4D7E0D}\InprocServer32" Name="RuntimeVersion" Value="v4.0.30319" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{213F780A-42B4-3C54-B0FC-1C0CAD4D7E0D}\InprocServer32" Name="CodeBase" Value="file:///[#filBE5909288783370C9477B46F4C70392D]" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{6DF1A7C3-8496-38A6-ABE5-6B4F1BD7ACCF}\Implemented Categories\{62C8FE65-4EBB-45e7-B440-6E39B2CDBF29}" Value="" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{6DF1A7C3-8496-38A6-ABE5-6B4F1BD7ACCF}\InprocServer32\2.2.0.0" Name="Class" Value="Microsoft.ApplicationInsights.Extensibility.PerfCounterCollector.QuickPulse.QuickPulseTelemetryModule" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{6DF1A7C3-8496-38A6-ABE5-6B4F1BD7ACCF}\InprocServer32\2.2.0.0" Name="Assembly" Value="Microsoft.AI.PerfCounterCollector, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{6DF1A7C3-8496-38A6-ABE5-6B4F1BD7ACCF}\InprocServer32\2.2.0.0" Name="RuntimeVersion" Value="v4.0.30319" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{6DF1A7C3-8496-38A6-ABE5-6B4F1BD7ACCF}\InprocServer32\2.2.0.0" Name="CodeBase" Value="file:///[#filBE5909288783370C9477B46F4C70392D]" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{6DF1A7C3-8496-38A6-ABE5-6B4F1BD7ACCF}\InprocServer32" Name="Class" Value="Microsoft.ApplicationInsights.Extensibility.PerfCounterCollector.QuickPulse.QuickPulseTelemetryModule" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{6DF1A7C3-8496-38A6-ABE5-6B4F1BD7ACCF}\InprocServer32" Name="Assembly" Value="Microsoft.AI.PerfCounterCollector, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{6DF1A7C3-8496-38A6-ABE5-6B4F1BD7ACCF}\InprocServer32" Name="RuntimeVersion" Value="v4.0.30319" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{6DF1A7C3-8496-38A6-ABE5-6B4F1BD7ACCF}\InprocServer32" Name="CodeBase" Value="file:///[#filBE5909288783370C9477B46F4C70392D]" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{7DDB63BA-01AC-31FC-A51A-292EF74BAF80}\Implemented Categories\{62C8FE65-4EBB-45e7-B440-6E39B2CDBF29}" Value="" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{7DDB63BA-01AC-31FC-A51A-292EF74BAF80}\InprocServer32\2.2.0.0" Name="Class" Value="Microsoft.ApplicationInsights.Extensibility.PerfCounterCollector.PerformanceCounterCollectionRequest" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{7DDB63BA-01AC-31FC-A51A-292EF74BAF80}\InprocServer32\2.2.0.0" Name="Assembly" Value="Microsoft.AI.PerfCounterCollector, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{7DDB63BA-01AC-31FC-A51A-292EF74BAF80}\InprocServer32\2.2.0.0" Name="RuntimeVersion" Value="v4.0.30319" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{7DDB63BA-01AC-31FC-A51A-292EF74BAF80}\InprocServer32\2.2.0.0" Name="CodeBase" Value="file:///[#filBE5909288783370C9477B46F4C70392D]" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{7DDB63BA-01AC-31FC-A51A-292EF74BAF80}\InprocServer32" Name="Class" Value="Microsoft.ApplicationInsights.Extensibility.PerfCounterCollector.PerformanceCounterCollectionRequest" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{7DDB63BA-01AC-31FC-A51A-292EF74BAF80}\InprocServer32" Name="Assembly" Value="Microsoft.AI.PerfCounterCollector, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{7DDB63BA-01AC-31FC-A51A-292EF74BAF80}\InprocServer32" Name="RuntimeVersion" Value="v4.0.30319" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{7DDB63BA-01AC-31FC-A51A-292EF74BAF80}\InprocServer32" Name="CodeBase" Value="file:///[#filBE5909288783370C9477B46F4C70392D]" Type="string" Action="write" />
+            </Component>
+            <Component Id="cmpDC88BBCEF1FC8CB57A7B8E1A1AA74579" Directory="dir7307A6085BD4ABD9B8955C093FD541F5" Guid="{BDE7C5A3-32C1-49D8-B37F-322F8C0F4FBF}">
+                <Class Id="{A6C6EEBE-AAD1-3498-A73D-BD99DBC07E4E}" Context="InprocServer32" Description="Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.ServerTelemetryChannel" ThreadingModel="both" ForeignServer="mscoree.dll">
+                    <ProgId Id="Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.ServerTelemetryChannel" Description="Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.ServerTelemetryChannel" />
+                </Class>
+                <Class Id="{BD9DA086-D7F0-31A3-9A73-90CF06D938E7}" Context="InprocServer32" Description="Microsoft.ApplicationInsights.WindowsServer.Channel.Implementation.SamplingPercentageEstimatorSettings" ThreadingModel="both" ForeignServer="mscoree.dll">
+                    <ProgId Id="Microsoft.ApplicationInsights.WindowsServer.Channel.Implementation.SamplingPercentageEstimatorSettings" Description="Microsoft.ApplicationInsights.WindowsServer.Channel.Implementation.SamplingPercentageEstimatorSettings" />
+                </Class>
+                <File Id="fil600588683644E58FE46D8F1D6ACD4BF2" KeyPath="yes" Source="$(var.publishDir)\bin\Microsoft.AI.ServerTelemetryChannel.dll" />
+                <RegistryValue Root="HKCR" Key="CLSID\{A6C6EEBE-AAD1-3498-A73D-BD99DBC07E4E}\Implemented Categories\{62C8FE65-4EBB-45e7-B440-6E39B2CDBF29}" Value="" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{A6C6EEBE-AAD1-3498-A73D-BD99DBC07E4E}\InprocServer32\2.2.0.0" Name="Class" Value="Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.ServerTelemetryChannel" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{A6C6EEBE-AAD1-3498-A73D-BD99DBC07E4E}\InprocServer32\2.2.0.0" Name="Assembly" Value="Microsoft.AI.ServerTelemetryChannel, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{A6C6EEBE-AAD1-3498-A73D-BD99DBC07E4E}\InprocServer32\2.2.0.0" Name="RuntimeVersion" Value="v4.0.30319" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{A6C6EEBE-AAD1-3498-A73D-BD99DBC07E4E}\InprocServer32\2.2.0.0" Name="CodeBase" Value="file:///[#fil600588683644E58FE46D8F1D6ACD4BF2]" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{A6C6EEBE-AAD1-3498-A73D-BD99DBC07E4E}\InprocServer32" Name="Class" Value="Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.ServerTelemetryChannel" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{A6C6EEBE-AAD1-3498-A73D-BD99DBC07E4E}\InprocServer32" Name="Assembly" Value="Microsoft.AI.ServerTelemetryChannel, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{A6C6EEBE-AAD1-3498-A73D-BD99DBC07E4E}\InprocServer32" Name="RuntimeVersion" Value="v4.0.30319" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{A6C6EEBE-AAD1-3498-A73D-BD99DBC07E4E}\InprocServer32" Name="CodeBase" Value="file:///[#fil600588683644E58FE46D8F1D6ACD4BF2]" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{BD9DA086-D7F0-31A3-9A73-90CF06D938E7}\Implemented Categories\{62C8FE65-4EBB-45e7-B440-6E39B2CDBF29}" Value="" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{BD9DA086-D7F0-31A3-9A73-90CF06D938E7}\InprocServer32\2.2.0.0" Name="Class" Value="Microsoft.ApplicationInsights.WindowsServer.Channel.Implementation.SamplingPercentageEstimatorSettings" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{BD9DA086-D7F0-31A3-9A73-90CF06D938E7}\InprocServer32\2.2.0.0" Name="Assembly" Value="Microsoft.AI.ServerTelemetryChannel, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{BD9DA086-D7F0-31A3-9A73-90CF06D938E7}\InprocServer32\2.2.0.0" Name="RuntimeVersion" Value="v4.0.30319" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{BD9DA086-D7F0-31A3-9A73-90CF06D938E7}\InprocServer32\2.2.0.0" Name="CodeBase" Value="file:///[#fil600588683644E58FE46D8F1D6ACD4BF2]" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{BD9DA086-D7F0-31A3-9A73-90CF06D938E7}\InprocServer32" Name="Class" Value="Microsoft.ApplicationInsights.WindowsServer.Channel.Implementation.SamplingPercentageEstimatorSettings" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{BD9DA086-D7F0-31A3-9A73-90CF06D938E7}\InprocServer32" Name="Assembly" Value="Microsoft.AI.ServerTelemetryChannel, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{BD9DA086-D7F0-31A3-9A73-90CF06D938E7}\InprocServer32" Name="RuntimeVersion" Value="v4.0.30319" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{BD9DA086-D7F0-31A3-9A73-90CF06D938E7}\InprocServer32" Name="CodeBase" Value="file:///[#fil600588683644E58FE46D8F1D6ACD4BF2]" Type="string" Action="write" />
+            </Component>
+            <Component Id="cmp73E0AE6CC60AFB3978B0C54E7B523161" Directory="dir7307A6085BD4ABD9B8955C093FD541F5" Guid="{D8690435-431F-4ABA-B746-9327BC32CECA}">
+                <File Id="fil3B5705763885E139676E08C8EC28FBE4" KeyPath="yes" Source="$(var.publishDir)\bin\Microsoft.AI.Web.dll" />
+            </Component>
+            <Component Id="cmp12C0B8E3521B133B08D54EC34DC1AA02" Directory="dir7307A6085BD4ABD9B8955C093FD541F5" Guid="{C4DC917D-88F8-4D17-8C32-2DDDB7CD2AAB}">
+                <Class Id="{1436A6BA-F524-37EB-961E-4B140C9E9F72}" Context="InprocServer32" Description="Microsoft.ApplicationInsights.WindowsServer.DomainNameRoleInstanceTelemetryInitializer" ThreadingModel="both" ForeignServer="mscoree.dll">
+                    <ProgId Id="Microsoft.ApplicationInsights.WindowsServer.DomainNameRoleInstanceTelemetryInitializer" Description="Microsoft.ApplicationInsights.WindowsServer.DomainNameRoleInstanceTelemetryInitializer" />
+                </Class>
+                <Class Id="{1756D47F-4B2E-3E25-A0C3-E30D41007252}" Context="InprocServer32" Description="Microsoft.ApplicationInsights.WindowsServer.DeviceTelemetryInitializer" ThreadingModel="both" ForeignServer="mscoree.dll">
+                    <ProgId Id="Microsoft.ApplicationInsights.WindowsServer.DeviceTelemetryInitializer" Description="Microsoft.ApplicationInsights.WindowsServer.DeviceTelemetryInitializer" />
+                </Class>
+                <Class Id="{3E11BDFE-034F-34EA-B438-8319EA4D9222}" Context="InprocServer32" Description="Microsoft.ApplicationInsights.WindowsServer.AzureWebAppRoleEnvironmentTelemetryInitializer" ThreadingModel="both" ForeignServer="mscoree.dll">
+                    <ProgId Id="Microsoft.ApplicationInsights.WindowsServer.AzureWebAppRoleEnvironmentTelemetryInitializer" Description="Microsoft.ApplicationInsights.WindowsServer.AzureWebAppRoleEnvironmentTelemetryInitializer" />
+                </Class>
+                <Class Id="{6DD6DE1B-EF0A-3EC9-BD3F-38016516D435}" Context="InprocServer32" Description="Microsoft.ApplicationInsights.WindowsServer.UnhandledExceptionTelemetryModule" ThreadingModel="both" ForeignServer="mscoree.dll">
+                    <ProgId Id="Microsoft.ApplicationInsights.WindowsServer.UnhandledExceptionTelemetryModule" Description="Microsoft.ApplicationInsights.WindowsServer.UnhandledExceptionTelemetryModule" />
+                </Class>
+                <Class Id="{C3983690-9B49-33E6-912B-2407841F251D}" Context="InprocServer32" Description="Microsoft.ApplicationInsights.WindowsServer.BuildInfoConfigComponentVersionTelemetryInitializer" ThreadingModel="both" ForeignServer="mscoree.dll">
+                    <ProgId Id="Microsoft.ApplicationInsights.WindowsServer.BuildInfoConfigComponentVersionTelemetryInitializer" Description="Microsoft.ApplicationInsights.WindowsServer.BuildInfoConfigComponentVersionTelemetryInitializer" />
+                </Class>
+                <Class Id="{CACF1C98-4866-3A77-AD65-C1D0E5A039C0}" Context="InprocServer32" Description="Microsoft.ApplicationInsights.WindowsServer.UnobservedExceptionTelemetryModule" ThreadingModel="both" ForeignServer="mscoree.dll">
+                    <ProgId Id="Microsoft.ApplicationInsights.WindowsServer.UnobservedExceptionTelemetryModule" Description="Microsoft.ApplicationInsights.WindowsServer.UnobservedExceptionTelemetryModule" />
+                </Class>
+                <Class Id="{D87A82D7-640E-304C-A08B-A8F3D470B517}" Context="InprocServer32" Description="Microsoft.ApplicationInsights.WindowsServer.AzureRoleEnvironmentTelemetryInitializer" ThreadingModel="both" ForeignServer="mscoree.dll">
+                    <ProgId Id="Microsoft.ApplicationInsights.WindowsServer.AzureRoleEnvironmentTelemetryInitializer" Description="Microsoft.ApplicationInsights.WindowsServer.AzureRoleEnvironmentTelemetryInitializer" />
+                </Class>
+                <File Id="filAD1F0859767AA982862D21F4FEA579DC" KeyPath="yes" Source="$(var.publishDir)\bin\Microsoft.AI.WindowsServer.dll" />
+                <RegistryValue Root="HKCR" Key="CLSID\{1436A6BA-F524-37EB-961E-4B140C9E9F72}\Implemented Categories\{62C8FE65-4EBB-45e7-B440-6E39B2CDBF29}" Value="" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{1436A6BA-F524-37EB-961E-4B140C9E9F72}\InprocServer32\2.2.0.0" Name="Class" Value="Microsoft.ApplicationInsights.WindowsServer.DomainNameRoleInstanceTelemetryInitializer" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{1436A6BA-F524-37EB-961E-4B140C9E9F72}\InprocServer32\2.2.0.0" Name="Assembly" Value="Microsoft.AI.WindowsServer, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{1436A6BA-F524-37EB-961E-4B140C9E9F72}\InprocServer32\2.2.0.0" Name="RuntimeVersion" Value="v4.0.30319" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{1436A6BA-F524-37EB-961E-4B140C9E9F72}\InprocServer32\2.2.0.0" Name="CodeBase" Value="file:///[#filAD1F0859767AA982862D21F4FEA579DC]" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{1436A6BA-F524-37EB-961E-4B140C9E9F72}\InprocServer32" Name="Class" Value="Microsoft.ApplicationInsights.WindowsServer.DomainNameRoleInstanceTelemetryInitializer" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{1436A6BA-F524-37EB-961E-4B140C9E9F72}\InprocServer32" Name="Assembly" Value="Microsoft.AI.WindowsServer, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{1436A6BA-F524-37EB-961E-4B140C9E9F72}\InprocServer32" Name="RuntimeVersion" Value="v4.0.30319" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{1436A6BA-F524-37EB-961E-4B140C9E9F72}\InprocServer32" Name="CodeBase" Value="file:///[#filAD1F0859767AA982862D21F4FEA579DC]" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{1756D47F-4B2E-3E25-A0C3-E30D41007252}\Implemented Categories\{62C8FE65-4EBB-45e7-B440-6E39B2CDBF29}" Value="" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{1756D47F-4B2E-3E25-A0C3-E30D41007252}\InprocServer32\2.2.0.0" Name="Class" Value="Microsoft.ApplicationInsights.WindowsServer.DeviceTelemetryInitializer" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{1756D47F-4B2E-3E25-A0C3-E30D41007252}\InprocServer32\2.2.0.0" Name="Assembly" Value="Microsoft.AI.WindowsServer, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{1756D47F-4B2E-3E25-A0C3-E30D41007252}\InprocServer32\2.2.0.0" Name="RuntimeVersion" Value="v4.0.30319" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{1756D47F-4B2E-3E25-A0C3-E30D41007252}\InprocServer32\2.2.0.0" Name="CodeBase" Value="file:///[#filAD1F0859767AA982862D21F4FEA579DC]" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{1756D47F-4B2E-3E25-A0C3-E30D41007252}\InprocServer32" Name="Class" Value="Microsoft.ApplicationInsights.WindowsServer.DeviceTelemetryInitializer" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{1756D47F-4B2E-3E25-A0C3-E30D41007252}\InprocServer32" Name="Assembly" Value="Microsoft.AI.WindowsServer, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{1756D47F-4B2E-3E25-A0C3-E30D41007252}\InprocServer32" Name="RuntimeVersion" Value="v4.0.30319" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{1756D47F-4B2E-3E25-A0C3-E30D41007252}\InprocServer32" Name="CodeBase" Value="file:///[#filAD1F0859767AA982862D21F4FEA579DC]" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{3E11BDFE-034F-34EA-B438-8319EA4D9222}\Implemented Categories\{62C8FE65-4EBB-45e7-B440-6E39B2CDBF29}" Value="" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{3E11BDFE-034F-34EA-B438-8319EA4D9222}\InprocServer32\2.2.0.0" Name="Class" Value="Microsoft.ApplicationInsights.WindowsServer.AzureWebAppRoleEnvironmentTelemetryInitializer" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{3E11BDFE-034F-34EA-B438-8319EA4D9222}\InprocServer32\2.2.0.0" Name="Assembly" Value="Microsoft.AI.WindowsServer, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{3E11BDFE-034F-34EA-B438-8319EA4D9222}\InprocServer32\2.2.0.0" Name="RuntimeVersion" Value="v4.0.30319" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{3E11BDFE-034F-34EA-B438-8319EA4D9222}\InprocServer32\2.2.0.0" Name="CodeBase" Value="file:///[#filAD1F0859767AA982862D21F4FEA579DC]" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{3E11BDFE-034F-34EA-B438-8319EA4D9222}\InprocServer32" Name="Class" Value="Microsoft.ApplicationInsights.WindowsServer.AzureWebAppRoleEnvironmentTelemetryInitializer" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{3E11BDFE-034F-34EA-B438-8319EA4D9222}\InprocServer32" Name="Assembly" Value="Microsoft.AI.WindowsServer, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{3E11BDFE-034F-34EA-B438-8319EA4D9222}\InprocServer32" Name="RuntimeVersion" Value="v4.0.30319" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{3E11BDFE-034F-34EA-B438-8319EA4D9222}\InprocServer32" Name="CodeBase" Value="file:///[#filAD1F0859767AA982862D21F4FEA579DC]" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{6DD6DE1B-EF0A-3EC9-BD3F-38016516D435}\Implemented Categories\{62C8FE65-4EBB-45e7-B440-6E39B2CDBF29}" Value="" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{6DD6DE1B-EF0A-3EC9-BD3F-38016516D435}\InprocServer32\2.2.0.0" Name="Class" Value="Microsoft.ApplicationInsights.WindowsServer.UnhandledExceptionTelemetryModule" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{6DD6DE1B-EF0A-3EC9-BD3F-38016516D435}\InprocServer32\2.2.0.0" Name="Assembly" Value="Microsoft.AI.WindowsServer, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{6DD6DE1B-EF0A-3EC9-BD3F-38016516D435}\InprocServer32\2.2.0.0" Name="RuntimeVersion" Value="v4.0.30319" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{6DD6DE1B-EF0A-3EC9-BD3F-38016516D435}\InprocServer32\2.2.0.0" Name="CodeBase" Value="file:///[#filAD1F0859767AA982862D21F4FEA579DC]" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{6DD6DE1B-EF0A-3EC9-BD3F-38016516D435}\InprocServer32" Name="Class" Value="Microsoft.ApplicationInsights.WindowsServer.UnhandledExceptionTelemetryModule" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{6DD6DE1B-EF0A-3EC9-BD3F-38016516D435}\InprocServer32" Name="Assembly" Value="Microsoft.AI.WindowsServer, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{6DD6DE1B-EF0A-3EC9-BD3F-38016516D435}\InprocServer32" Name="RuntimeVersion" Value="v4.0.30319" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{6DD6DE1B-EF0A-3EC9-BD3F-38016516D435}\InprocServer32" Name="CodeBase" Value="file:///[#filAD1F0859767AA982862D21F4FEA579DC]" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{C3983690-9B49-33E6-912B-2407841F251D}\Implemented Categories\{62C8FE65-4EBB-45e7-B440-6E39B2CDBF29}" Value="" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{C3983690-9B49-33E6-912B-2407841F251D}\InprocServer32\2.2.0.0" Name="Class" Value="Microsoft.ApplicationInsights.WindowsServer.BuildInfoConfigComponentVersionTelemetryInitializer" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{C3983690-9B49-33E6-912B-2407841F251D}\InprocServer32\2.2.0.0" Name="Assembly" Value="Microsoft.AI.WindowsServer, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{C3983690-9B49-33E6-912B-2407841F251D}\InprocServer32\2.2.0.0" Name="RuntimeVersion" Value="v4.0.30319" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{C3983690-9B49-33E6-912B-2407841F251D}\InprocServer32\2.2.0.0" Name="CodeBase" Value="file:///[#filAD1F0859767AA982862D21F4FEA579DC]" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{C3983690-9B49-33E6-912B-2407841F251D}\InprocServer32" Name="Class" Value="Microsoft.ApplicationInsights.WindowsServer.BuildInfoConfigComponentVersionTelemetryInitializer" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{C3983690-9B49-33E6-912B-2407841F251D}\InprocServer32" Name="Assembly" Value="Microsoft.AI.WindowsServer, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{C3983690-9B49-33E6-912B-2407841F251D}\InprocServer32" Name="RuntimeVersion" Value="v4.0.30319" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{C3983690-9B49-33E6-912B-2407841F251D}\InprocServer32" Name="CodeBase" Value="file:///[#filAD1F0859767AA982862D21F4FEA579DC]" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{CACF1C98-4866-3A77-AD65-C1D0E5A039C0}\Implemented Categories\{62C8FE65-4EBB-45e7-B440-6E39B2CDBF29}" Value="" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{CACF1C98-4866-3A77-AD65-C1D0E5A039C0}\InprocServer32\2.2.0.0" Name="Class" Value="Microsoft.ApplicationInsights.WindowsServer.UnobservedExceptionTelemetryModule" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{CACF1C98-4866-3A77-AD65-C1D0E5A039C0}\InprocServer32\2.2.0.0" Name="Assembly" Value="Microsoft.AI.WindowsServer, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{CACF1C98-4866-3A77-AD65-C1D0E5A039C0}\InprocServer32\2.2.0.0" Name="RuntimeVersion" Value="v4.0.30319" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{CACF1C98-4866-3A77-AD65-C1D0E5A039C0}\InprocServer32\2.2.0.0" Name="CodeBase" Value="file:///[#filAD1F0859767AA982862D21F4FEA579DC]" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{CACF1C98-4866-3A77-AD65-C1D0E5A039C0}\InprocServer32" Name="Class" Value="Microsoft.ApplicationInsights.WindowsServer.UnobservedExceptionTelemetryModule" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{CACF1C98-4866-3A77-AD65-C1D0E5A039C0}\InprocServer32" Name="Assembly" Value="Microsoft.AI.WindowsServer, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{CACF1C98-4866-3A77-AD65-C1D0E5A039C0}\InprocServer32" Name="RuntimeVersion" Value="v4.0.30319" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{CACF1C98-4866-3A77-AD65-C1D0E5A039C0}\InprocServer32" Name="CodeBase" Value="file:///[#filAD1F0859767AA982862D21F4FEA579DC]" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{D87A82D7-640E-304C-A08B-A8F3D470B517}\Implemented Categories\{62C8FE65-4EBB-45e7-B440-6E39B2CDBF29}" Value="" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{D87A82D7-640E-304C-A08B-A8F3D470B517}\InprocServer32\2.2.0.0" Name="Class" Value="Microsoft.ApplicationInsights.WindowsServer.AzureRoleEnvironmentTelemetryInitializer" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{D87A82D7-640E-304C-A08B-A8F3D470B517}\InprocServer32\2.2.0.0" Name="Assembly" Value="Microsoft.AI.WindowsServer, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{D87A82D7-640E-304C-A08B-A8F3D470B517}\InprocServer32\2.2.0.0" Name="RuntimeVersion" Value="v4.0.30319" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{D87A82D7-640E-304C-A08B-A8F3D470B517}\InprocServer32\2.2.0.0" Name="CodeBase" Value="file:///[#filAD1F0859767AA982862D21F4FEA579DC]" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{D87A82D7-640E-304C-A08B-A8F3D470B517}\InprocServer32" Name="Class" Value="Microsoft.ApplicationInsights.WindowsServer.AzureRoleEnvironmentTelemetryInitializer" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{D87A82D7-640E-304C-A08B-A8F3D470B517}\InprocServer32" Name="Assembly" Value="Microsoft.AI.WindowsServer, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{D87A82D7-640E-304C-A08B-A8F3D470B517}\InprocServer32" Name="RuntimeVersion" Value="v4.0.30319" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{D87A82D7-640E-304C-A08B-A8F3D470B517}\InprocServer32" Name="CodeBase" Value="file:///[#filAD1F0859767AA982862D21F4FEA579DC]" Type="string" Action="write" />
+            </Component>
+            <Component Id="cmp83B091C8E4C28CDA3907108966A880EC" Directory="dir7307A6085BD4ABD9B8955C093FD541F5" Guid="{A3DA021A-636B-402E-A144-C5BE396A6E68}">
+                <File Id="filF9974E73E4816E8A6449ED9D6727DA1A" KeyPath="yes" Source="$(var.publishDir)\bin\Microsoft.ApplicationInsights.dll" />
+            </Component>
+            <Component Id="cmp50642F6868B70A0D2E0A7894E1C65D3F" Directory="dir7307A6085BD4ABD9B8955C093FD541F5" Guid="{BBB406AB-B59C-4A76-B4E9-191164657A7A}">
+                <File Id="fil5943330B26DED2D0E7F26CAC5D34148F" KeyPath="yes" Source="$(var.publishDir)\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll" />
+            </Component>
+            <Component Id="cmpDE273EC5A6ABB02DB8578BC4F2ABEBD3" Directory="dir7307A6085BD4ABD9B8955C093FD541F5" Guid="{F8986871-2319-4B57-A075-A94CA5681232}">
+                <File Id="filBB5247D187E46075D53C64E74FCADCD1" KeyPath="yes" Source="$(var.publishDir)\bin\Microsoft.Web.Infrastructure.dll" />
+            </Component>
+            <Component Id="cmpBE9BB87ABB7F80C07AB897C66C4BFF19" Directory="dir7307A6085BD4ABD9B8955C093FD541F5" Guid="{65190921-9948-4186-9AD1-E6E4E1E4CE1D}">
+                <File Id="fil7AB5AC371ADF176E37A0069DBDC4AC3A" KeyPath="yes" Source="$(var.publishDir)\bin\Newtonsoft.Json.dll" />
+            </Component>
+            <Component Id="cmp8E755731D2F4513E05B1835C366B4FD0" Directory="dir7307A6085BD4ABD9B8955C093FD541F5" Guid="{7D274A9A-F28E-42D4-8042-4EC217E9B131}">
+                <File Id="fil7C7BB6B431E1D762DC3FE4BA24D05BBF" KeyPath="yes" Source="$(var.publishDir)\bin\System.Web.Helpers.dll" />
+            </Component>
+            <Component Id="cmp7C5E0173F73C80F69AE5B339905F1CB7" Directory="dir7307A6085BD4ABD9B8955C093FD541F5" Guid="{DCC31408-F165-4AC1-893A-7A8CE4BAF520}">
+                <File Id="filEE8B6B3735E821FBE2F7A3349831EBF3" KeyPath="yes" Source="$(var.publishDir)\bin\System.Web.Mvc.dll" />
+            </Component>
+            <Component Id="cmp735C96C48954EB2CBF113474F0BC85D4" Directory="dir7307A6085BD4ABD9B8955C093FD541F5" Guid="{205D657F-4061-4716-B1B5-F54530234E48}">
+                <File Id="fil17043427144969E11DA28D7B3C954C17" KeyPath="yes" Source="$(var.publishDir)\bin\System.Web.Optimization.dll" />
+            </Component>
+            <Component Id="cmpA7F0F3CA5AC10E3C0A3496788771A1DF" Directory="dir7307A6085BD4ABD9B8955C093FD541F5" Guid="{9E558D64-E4D5-4E43-8ECE-105CE6E39809}">
+                <File Id="fil52BF9F6A41E8803312585C2D9CE0FC39" KeyPath="yes" Source="$(var.publishDir)\bin\System.Web.Razor.dll" />
+            </Component>
+            <Component Id="cmpEA09AAD207FE05D3450FEEF959A34EEA" Directory="dir7307A6085BD4ABD9B8955C093FD541F5" Guid="{F8A600B1-DD8C-4F3B-95D8-43DA1BEF691F}">
+                <File Id="filD18DFFC3C748F3F4A6A0CB010DEBB16F" KeyPath="yes" Source="$(var.publishDir)\bin\System.Web.WebPages.Deployment.dll" />
+            </Component>
+            <Component Id="cmp1A8CCD05EF52550EAC9D5912926FD160" Directory="dir7307A6085BD4ABD9B8955C093FD541F5" Guid="{9CF37C48-0026-4F5E-B31E-24ED7CD2A9ED}">
+                <File Id="filF229DC13D43D4133C6A2608EF770EA68" KeyPath="yes" Source="$(var.publishDir)\bin\System.Web.WebPages.dll" />
+            </Component>
+            <Component Id="cmp73B1845052612B620A724C3DC5A71527" Directory="dir7307A6085BD4ABD9B8955C093FD541F5" Guid="{DCBA2E08-5FB0-4F8D-933F-F9E366D17FB9}">
+                <File Id="fil8B8AC6A01AA07762601AE1B2CC62E044" KeyPath="yes" Source="$(var.publishDir)\bin\System.Web.WebPages.Razor.dll" />
+            </Component>
+            <Component Id="cmp2E762DAB6A0D1BBC2945B465F3EA2894" Directory="dir7307A6085BD4ABD9B8955C093FD541F5" Guid="{F4D81048-AAE6-4D0B-9C5D-34C96B88487E}">
+                <File Id="fil9705831D6FA1AA7D7E104FDDB7779878" KeyPath="yes" Source="$(var.publishDir)\bin\WebGrease.dll" />
+            </Component>
+            <Component Id="cmp134B416160624F000B2571122702262D" Directory="dir530CC0BB7768701C9C7496ACE976A217" Guid="{37475206-5C04-4F36-9648-031454F13C2F}">
+                <File Id="fil96F937F3784E982979300F7113D3D937" KeyPath="yes" Source="$(var.publishDir)\Content\bootstrap.css" />
+            </Component>
+            <Component Id="cmp7688CD5A79A901FD92F8DF1A796CC37D" Directory="dir530CC0BB7768701C9C7496ACE976A217" Guid="{ECAA94E4-6699-441A-B7C9-C56960E37356}">
+                <File Id="fil469126160C64ABAD2D4C4D5DC4C8189E" KeyPath="yes" Source="$(var.publishDir)\Content\bootstrap.min.css" />
+            </Component>
+            <Component Id="cmp7004A2DA3185B23160B6485ABF90905B" Directory="dir530CC0BB7768701C9C7496ACE976A217" Guid="{D223F899-AA90-49FF-B2AB-828869AB41A9}">
+                <File Id="filF3EE11220B3A997538A6ABBE3041A54C" KeyPath="yes" Source="$(var.publishDir)\Content\Site.css" />
+            </Component>
+            <Component Id="cmp2BE80B2049C60EEB8D292C8EDD951DDA" Directory="dir52AB9D2EA73ECC1A796C76EF5D90B485" Guid="{7F221B6E-D03B-4104-A3DD-1C613106C481}">
+                <File Id="filF97F28A8059E314C9EC09C4F3265AC17" KeyPath="yes" Source="$(var.publishDir)\fonts\glyphicons-halflings-regular.eot" />
+            </Component>
+            <Component Id="cmp15EE58B04E437DF87D94474234D3A927" Directory="dir52AB9D2EA73ECC1A796C76EF5D90B485" Guid="{90E5C82B-72AE-42CD-A2DC-9C8B401F8B54}">
+                <File Id="filFD556BB5CB0F0923196A014CE7F9BA0F" KeyPath="yes" Source="$(var.publishDir)\fonts\glyphicons-halflings-regular.svg" />
+            </Component>
+            <Component Id="cmp2F4270FB88F5D6949480BC3112E01567" Directory="dir52AB9D2EA73ECC1A796C76EF5D90B485" Guid="{DA117E2D-56DB-4A4D-A714-E6EC5F2C717A}">
+                <File Id="fil30F15722AB6480E8D46AF1CC103EEFD6" KeyPath="yes" Source="$(var.publishDir)\fonts\glyphicons-halflings-regular.ttf" />
+            </Component>
+            <Component Id="cmpF1D599E2365E207FEAE960AC14F1BA20" Directory="dir52AB9D2EA73ECC1A796C76EF5D90B485" Guid="{DF017731-58C9-4D3B-8CAA-90CB3BFCDA5B}">
+                <File Id="fil0E8F1CCDB37C78140657C4CDA9F203BF" KeyPath="yes" Source="$(var.publishDir)\fonts\glyphicons-halflings-regular.woff" />
+            </Component>
+            <Component Id="cmpD678B97250CC3529B468B2F91F92DF3E" Directory="dir33A2F09B010813323099475AA1D7838F" Guid="{3A457EC8-43E8-4C2D-BE12-67A9A682B225}">
+                <File Id="fil883066B8D18B2A53DF5C1B38E918BB4B" KeyPath="yes" Source="$(var.publishDir)\Scripts\bootstrap.js" />
+            </Component>
+            <Component Id="cmp745E904B75545999C28599CEA9F3F7E0" Directory="dir33A2F09B010813323099475AA1D7838F" Guid="{4B077273-370B-4657-9805-00F51CFF0C97}">
+                <File Id="fil14BBE903AC3BC8FF76BF619D8CCC357D" KeyPath="yes" Source="$(var.publishDir)\Scripts\bootstrap.min.js" />
+            </Component>
+            <Component Id="cmp862A2852502E2CE36F4307AB925D6D56" Directory="dir33A2F09B010813323099475AA1D7838F" Guid="{21C62AF9-E661-442A-9F0A-F0FA664560D0}">
+                <File Id="filEF6C972C00B77A971BE93ECE414AEEC5" KeyPath="yes" Source="$(var.publishDir)\Scripts\jquery-1.10.2.js" />
+            </Component>
+            <Component Id="cmp15ABDF5BF36A35C3541A6ED8D7134800" Directory="dir33A2F09B010813323099475AA1D7838F" Guid="{544DFBFA-9DBF-4CD7-BC0B-FFED701930EF}">
+                <File Id="fil258042E644106A64274F3B00A038D2A1" KeyPath="yes" Source="$(var.publishDir)\Scripts\jquery-1.10.2.min.js" />
+            </Component>
+            <Component Id="cmp6EFB62B808A795CC4A00B8292BD875BF" Directory="dir33A2F09B010813323099475AA1D7838F" Guid="{EB6143F3-42B3-48C4-8752-B387537B7467}">
+                <File Id="fil36AD56C516B829E8DF970EEC50AC17D6" KeyPath="yes" Source="$(var.publishDir)\Scripts\jquery-1.10.2.min.map" />
+            </Component>
+            <Component Id="cmp714CDAD52DD8C166ADB9F9D06E00F7A7" Directory="dir33A2F09B010813323099475AA1D7838F" Guid="{82D90268-A77C-424A-BA21-9067AAFCA6B6}">
+                <File Id="filB41C13E7B84CAD01B3377F8232D87224" KeyPath="yes" Source="$(var.publishDir)\Scripts\jquery.validate.js" />
+            </Component>
+            <Component Id="cmp68CF87A5F7BFF71A4D16683159EF76EE" Directory="dir33A2F09B010813323099475AA1D7838F" Guid="{F70BF1BE-0627-467A-A57B-3B8DD823584E}">
+                <File Id="filAAE1EBDA49525218562253FD269A06F7" KeyPath="yes" Source="$(var.publishDir)\Scripts\jquery.validate.min.js" />
+            </Component>
+            <Component Id="cmpF0FAF1501A114DF1520259529D62975D" Directory="dir33A2F09B010813323099475AA1D7838F" Guid="{769B8EC9-DC09-4FC9-97A5-DC33D5181081}">
+                <File Id="fil95133A56C77192E0BEB136D2FF4EEDE6" KeyPath="yes" Source="$(var.publishDir)\Scripts\jquery.validate.unobtrusive.js" />
+            </Component>
+            <Component Id="cmp5D07AB12157E012BE6498088827EF445" Directory="dir33A2F09B010813323099475AA1D7838F" Guid="{7F855B91-8A6A-49BC-8F09-333DAA0054C3}">
+                <File Id="filA42BBE3AFD55E921203E28092A13E4C0" KeyPath="yes" Source="$(var.publishDir)\Scripts\jquery.validate.unobtrusive.min.js" />
+            </Component>
+            <Component Id="cmp4E7BDC6A478C81539B53A29435FC8244" Directory="dir33A2F09B010813323099475AA1D7838F" Guid="{B0C95BB3-686D-4CB4-BC2B-796B0E5D0A56}">
+                <File Id="filDC3FA0AC0A56DC62D05F8D0049BA123F" KeyPath="yes" Source="$(var.publishDir)\Scripts\modernizr-2.6.2.js" />
+            </Component>
+            <Component Id="cmpDC592727766A3A3435FDD74FA18E8045" Directory="dir33A2F09B010813323099475AA1D7838F" Guid="{78714AE8-9502-40FA-B742-1C8F1963AE70}">
+                <File Id="filEBC57445AC95E636D61687A479575684" KeyPath="yes" Source="$(var.publishDir)\Scripts\respond.js" />
+            </Component>
+            <Component Id="cmpB54CDBFD4311ADE53C1AD30106CF5EDF" Directory="dir33A2F09B010813323099475AA1D7838F" Guid="{A6F87F4C-46E7-40E2-ACC3-E58E5AA67123}">
+                <File Id="filA5CBC053CBBB9AFEBCCAD93A3E18BA94" KeyPath="yes" Source="$(var.publishDir)\Scripts\respond.min.js" />
+            </Component>
+            <Component Id="cmp07FC7C854423B3249C80BF129B4AF9E5" Directory="dir80336B8805F52EE6540E5C041C102B14" Guid="{BC39E35A-C15F-4183-AC89-1F1F16DA4822}">
+                <File Id="fil46EF647C26B9EC12B4D8CFA7AF6875DD" KeyPath="yes" Source="$(var.publishDir)\Views\Web.config" />
+            </Component>
+            <Component Id="cmp310576D7620B42E68FA7D27F684033D9" Directory="dir80336B8805F52EE6540E5C041C102B14" Guid="{0B7D3D11-D512-4FDF-860F-628A9DC9AA0C}">
+                <File Id="fil0C4E4BC44840EDC5FE1052DEB643BE0F" KeyPath="yes" Source="$(var.publishDir)\Views\_ViewStart.cshtml" />
+            </Component>
+            <Component Id="cmpFAF7131A0E7B0B82E44B2FF51D828B1B" Directory="dir6BAD38F6362B08BEA7B04F97CDBED3ED" Guid="{6E159407-1F57-4085-B229-01A208B6CD4E}">
+                <File Id="filFC92FD5E72B6AB9196B8C872B2C76B28" KeyPath="yes" Source="$(var.publishDir)\Views\Home\About.cshtml" />
+            </Component>
+            <Component Id="cmp093A7A271AD4B3757D68096215878895" Directory="dir6BAD38F6362B08BEA7B04F97CDBED3ED" Guid="{B161EEBB-68E2-40EC-879D-808BA2ECBC29}">
+                <File Id="filA14FC5D45F9C641951DE389D24B220BE" KeyPath="yes" Source="$(var.publishDir)\Views\Home\Contact.cshtml" />
+            </Component>
+            <Component Id="cmpA6DD513026156AA8148733CE823EC43B" Directory="dir6BAD38F6362B08BEA7B04F97CDBED3ED" Guid="{63ED4275-49C2-4AF7-8C13-F246A8D7DA12}">
+                <File Id="filF550F8CB2C328BF460F151CA2722A7FB" KeyPath="yes" Source="$(var.publishDir)\Views\Home\Index.cshtml" />
+            </Component>
+            <Component Id="cmp8D80F6934965F8C17A8FE52063E6669C" Directory="dirDDA78272B9002589A49905B2BC2F95F8" Guid="{482E1D59-3B18-4E8B-9848-053675E57CEA}">
+                <File Id="fil9428DE7E47A6AB693F514882464E2048" KeyPath="yes" Source="$(var.publishDir)\Views\Shared\Error.cshtml" />
+            </Component>
+            <Component Id="cmp2AADE09DEBF6644D19B3041747337047" Directory="dirDDA78272B9002589A49905B2BC2F95F8" Guid="{FABD5852-54B0-44CB-AD4D-32745CB96030}">
+                <File Id="filBB627502828F370D76BE3BAC6695270B" KeyPath="yes" Source="$(var.publishDir)\Views\Shared\_Layout.cshtml" />
+            </Component>
+        </ComponentGroup>
+    </Fragment>
+    <Fragment>
+        <DirectoryRef Id="dir80336B8805F52EE6540E5C041C102B14">
+            <Directory Id="dir6BAD38F6362B08BEA7B04F97CDBED3ED" Name="Home" />
+        </DirectoryRef>
+    </Fragment>
+    <Fragment>
+        <DirectoryRef Id="dir80336B8805F52EE6540E5C041C102B14">
+            <Directory Id="dirDDA78272B9002589A49905B2BC2F95F8" Name="Shared" />
+        </DirectoryRef>
+    </Fragment>
+</Wix>

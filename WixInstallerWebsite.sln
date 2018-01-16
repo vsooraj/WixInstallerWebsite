@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.27130.2010
+VisualStudioVersion = 15.0.27130.2020
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{930C7802-8A8C-48F9-8165-68863BCCD9DD}") = "Website.Setup", "Website.Setup\Website.Setup.wixproj", "{1B7DA727-227A-4FF7-A1AC-006B88492D2D}"
 EndProject
@@ -20,7 +20,6 @@ Global
 		{1B7DA727-227A-4FF7-A1AC-006B88492D2D}.Debug|x86.Build.0 = Debug|x86
 		{1B7DA727-227A-4FF7-A1AC-006B88492D2D}.Release|Any CPU.ActiveCfg = Release|x86
 		{1B7DA727-227A-4FF7-A1AC-006B88492D2D}.Release|x86.ActiveCfg = Release|x86
-		{1B7DA727-227A-4FF7-A1AC-006B88492D2D}.Release|x86.Build.0 = Release|x86
 		{2AFEA86F-437C-4418-8F24-C384F54EC851}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{2AFEA86F-437C-4418-8F24-C384F54EC851}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2AFEA86F-437C-4418-8F24-C384F54EC851}.Debug|x86.ActiveCfg = Debug|Any CPU
